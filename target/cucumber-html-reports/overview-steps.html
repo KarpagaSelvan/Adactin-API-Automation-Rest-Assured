@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>API Project</td>
+      <td>11 Oct 2022, 19:43</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.stepdefinition.CommonStep.userShouldVerifyTheStatusCodeIs(int)</td>
+              <td>9</td>
+              <td class="duration" data-value="1444444">0.001</td>
+              <td class="duration" data-value="1444444">0.005</td>
+              <td class="duration" data-value="13000000">0.013</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_LoginStep.userShouldAddBasicAuthenticationForLogin()</td>
+              <td>1</td>
+              <td class="duration" data-value="685000000">0.685</td>
+              <td class="duration" data-value="685000000">0.685</td>
+              <td class="duration" data-value="685000000">0.685</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_LoginStep.userShouldAddHeader()</td>
+              <td>1</td>
+              <td class="duration" data-value="7728000000">7.728</td>
+              <td class="duration" data-value="7728000000">7.728</td>
+              <td class="duration" data-value="7728000000">7.728</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_LoginStep.userShouldSendRequestForLoginEndpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="8226000000">8.226</td>
+              <td class="duration" data-value="8226000000">8.226</td>
+              <td class="duration" data-value="8226000000">8.226</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_LoginStep.userShouldVerifyTheLoginResponseBodyFirstnamePresentAsAndGetLogtokenSaved(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1734000000">1.734</td>
+              <td class="duration" data-value="1734000000">1.734</td>
+              <td class="duration" data-value="1734000000">1.734</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_GetStateCodeStep.userShouldAddHeaderForToGetStateList()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_GetStateCodeStep.userShouldSendRequestForStateListEndpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1469000000">1.469</td>
+              <td class="duration" data-value="1469000000">1.469</td>
+              <td class="duration" data-value="1469000000">1.469</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_GetStateCodeStep.userShouldVerifyTheStateListResponseMessageMatchesAndSavedStateIdAndVerifyTheSuccessMsg(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="81000000">0.081</td>
+              <td class="duration" data-value="81000000">0.081</td>
+              <td class="duration" data-value="81000000">0.081</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_GetCityCodeStep.userShouldAddHeaderForToGetCityList()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_GetCityCodeStep.userShouldAddRequestBodyStateIdForGetCityList()</td>
+              <td>1</td>
+              <td class="duration" data-value="360000000">0.360</td>
+              <td class="duration" data-value="360000000">0.360</td>
+              <td class="duration" data-value="360000000">0.360</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_GetCityCodeStep.userShouldSendRequestForCityListEndPoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2513000000">2.513</td>
+              <td class="duration" data-value="2513000000">2.513</td>
+              <td class="duration" data-value="2513000000">2.513</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_GetCityCodeStep.userShouldVerifyTheCityListResponseMessageMatchesAndSavedCityCodeAndVerifyTheSuccessMsg(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="142000000">0.142</td>
+              <td class="duration" data-value="142000000">0.142</td>
+              <td class="duration" data-value="142000000">0.142</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldAddHeaderAndBearerAuthorizationForAccessingAddressEndpoint()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldAddHeaderAndBearerAuthorizationForAccessingDeleteAddressEndpoint()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldAddHeaderAndBearerAuthorizationForAccessingGetAddressEndpoint()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldAddHeaderAndBearerAuthorizationForAccessingUpdateAddressEndpoint()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldAddRequestBodyForAddNewAddressAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="31000000">0.031</td>
+              <td class="duration" data-value="31000000">0.031</td>
+              <td class="duration" data-value="31000000">0.031</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldAddRequestBodyForExistingAddressId()</td>
+              <td>1</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldAddRequestBodyToUpdateTheAddressAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="78000000">0.078</td>
+              <td class="duration" data-value="78000000">0.078</td>
+              <td class="duration" data-value="78000000">0.078</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldSendRequestForAddUserAddressEndpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1250000000">1.250</td>
+              <td class="duration" data-value="1250000000">1.250</td>
+              <td class="duration" data-value="1250000000">1.250</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldSendRequestForDeletingTheGeneratedAddress(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1672000000">1.672</td>
+              <td class="duration" data-value="1672000000">1.672</td>
+              <td class="duration" data-value="1672000000">1.672</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldSendRequestForGetingAllAddresses(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2015000000">2.015</td>
+              <td class="duration" data-value="2015000000">2.015</td>
+              <td class="duration" data-value="2015000000">2.015</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldSendRequestForUpdateAddressEndpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1703000000">1.703</td>
+              <td class="duration" data-value="1703000000">1.703</td>
+              <td class="duration" data-value="1703000000">1.703</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldVerifyTheAddUserAddressResponseMessageMatches(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="duration" data-value="11000000">0.011</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldVerifyTheDeleteUserAddressResponseMessageMatches(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldVerifyTheGetUserAddressResponseMessageMatches(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="143000000">0.143</td>
+              <td class="duration" data-value="143000000">0.143</td>
+              <td class="duration" data-value="143000000">0.143</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_AddressStep.userShouldVerifyTheUpdateUserAddressResponseMessageMatches(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC5_ChangeProfilePicStep.userShouldAddHeaderAndBearerAuthorizationForAccessingChangeProfilePictureEndpoint()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC5_ChangeProfilePicStep.userShouldPassFormdataKeyAndFilepath()</td>
+              <td>1</td>
+              <td class="duration" data-value="63000000">0.063</td>
+              <td class="duration" data-value="63000000">0.063</td>
+              <td class="duration" data-value="63000000">0.063</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC5_ChangeProfilePicStep.userShouldSendRequestForChangeProfilePicEndpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2031000000">2.031</td>
+              <td class="duration" data-value="2031000000">2.031</td>
+              <td class="duration" data-value="2031000000">2.031</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC5_ChangeProfilePicStep.userShouldVerifyTheChangeProfilePicResponseMessageMatches(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="406000000">0.406</td>
+              <td class="duration" data-value="406000000">0.406</td>
+              <td class="duration" data-value="406000000">0.406</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC6_ProductSearchStep.userShouldAddHeaderAndBearerAuthorizationForAccessingProductSearchEndpoint()</td>
+              <td>1</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC6_ProductSearchStep.userShouldAddTheRequestBodyToSearch(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="78000000">0.078</td>
+              <td class="duration" data-value="78000000">0.078</td>
+              <td class="duration" data-value="78000000">0.078</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC6_ProductSearchStep.userShouldSendRequestForProductSearchEndpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1224000000">1.224</td>
+              <td class="duration" data-value="1224000000">1.224</td>
+              <td class="duration" data-value="1224000000">1.224</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC6_ProductSearchStep.userShouldVerifyTheProductSearchResponseMessageMatches(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="85000000">0.085</td>
+              <td class="duration" data-value="85000000">0.085</td>
+              <td class="duration" data-value="85000000">0.085</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>35</td>
+            <td>43</td>
+            <td class="duration">0.786</td>
+            <td class="duration">8.226</td>
+            <td class="duration">33.805</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
